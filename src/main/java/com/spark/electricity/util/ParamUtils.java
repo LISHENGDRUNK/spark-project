@@ -1,9 +1,10 @@
 package com.spark.electricity.util;
 
-import com.fasterxml.jackson.core.JsonParseException;
-import org.json.JSONArray;
-import org.json.JSONException;
-import org.json.JSONObject;
+
+import com.alibaba.fastjson.JSONObject;
+import com.alibaba.fastjson.JSONArray;
+import com.alibaba.fastjson.JSONException;
+
 
 /**
  * @ClassName ParamUtils
@@ -43,7 +44,7 @@ public class ParamUtils {
 
         try {
             JSONArray jsonArray = jsonObject.getJSONArray(field);
-            if (jsonArray != null && jsonArray.length() > 0) {
+            if (jsonArray != null && jsonArray.size() > 0) {
                 return jsonArray.getString(0);
             }
         } catch (JSONException e) {

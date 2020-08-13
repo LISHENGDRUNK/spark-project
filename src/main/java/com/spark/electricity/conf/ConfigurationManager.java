@@ -1,5 +1,7 @@
 package com.spark.electricity.conf;
 
+import org.apache.hadoop.yarn.webapp.hamlet.Hamlet;
+
 import java.io.InputStream;
 import java.util.Properties;
 
@@ -95,5 +97,26 @@ public class ConfigurationManager {
      **/
     public static String getProperty(String key){
         return prop.getProperty(key);
+    }
+
+    /*
+     * 获取整数类型
+     **/
+    public static int getInteger(String key){
+        return Integer.valueOf(prop.getProperty(key));
+    }
+
+    /*
+     * 获取boolean类型
+     **/
+    public static boolean getBoolean(String key){
+
+        String value = prop.getProperty(key);
+        try{
+          return  Boolean.valueOf(value);
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+        return false;
     }
 }
