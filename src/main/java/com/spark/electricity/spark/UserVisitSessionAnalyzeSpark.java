@@ -254,6 +254,7 @@ public class UserVisitSessionAnalyzeSpark {
                         String fullAggrInfo = partAggrInfo + "|"
                                 + Constants.FIELD_AGE + "=" + age + "|"
                                 + Constants.FIELD_PROFESSIONAL + "=" + professional + "|"
+                                + Constants.FIELD_CITY + "=" + city + "|"
                                 + Constants.FIELD_SEX + "=" + sex + "|";
                         return new Tuple2<String, String>(sessionid, fullAggrInfo);
                     }
